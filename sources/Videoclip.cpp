@@ -4,7 +4,7 @@
 
 #include "../headers/Videoclip.h"
 
-Videoclip::Videoclip(const std::string &title_, const std::string &description_, float &duration_) : title(title_), description(description_), duration(duration_) {
+Videoclip::Videoclip(const std::string &title_, const std::string &description_, unsigned & duration_) : title(title_), description(description_), duration(duration_) {
     viewCount = 0;
 }
 

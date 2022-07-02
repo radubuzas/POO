@@ -8,16 +8,9 @@ Subscription::Subscription() {
     subscription = SubscriptionType::Basic;
 }
 
-Subscription::Subscription(const Subscription & rff) : subscription(rff.subscription) {
-}
 
-Subscription& Subscription::operator=(const Subscription & rff) {
-    subscription = rff.subscription;
-    return *this;
-}
-
-SubscriptionType Subscription::getSubscriptionType() {
-    return subscription;
+Subscription::Subscription(const SubscriptionType & subscription_) {
+    subscription = subscription_;
 }
 
 void Subscription::setSubscriptionType(const SubscriptionType & subscription_) {

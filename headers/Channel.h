@@ -20,6 +20,7 @@ public:
     Channel(const User & user, const std::string & chanelTitle, unsigned subscriberCount, const std::vector<Videoclip *> & videoclips, const std::vector<Viewer *> & subs_);
     Channel(const User & user, const std::string & chanelTitle, unsigned subscriberCount);
     void addVideoClip(Videoclip & videoclip);
+    void addSubscriber(Viewer & viewer);
     friend std::ostream &operator << (std::ostream &os, const Channel &channel);
     std::string getName() {
         return chanelTitle;

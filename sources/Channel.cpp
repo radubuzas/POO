@@ -9,13 +9,19 @@ Channel::Channel(const User & user_, const std::string & title_, unsigned subs):
 Channel::Channel(const User & user_, const std::string & title_, unsigned subs, const std::vector<Videoclip *> & vid, const std::vector<Viewer *> & subs_): user{user_}, chanelTitle{title_}, subscriberCount{subs}, videoclips{vid}, subscribers{subs_}{}
 
 void Channel::addVideoClip(Videoclip & videoclip) {
-    videoclips.push_back(&videoclip);
+    videoclips.push_back( & videoclip);
+}
+
+void Channel::addSubscriber(Viewer & viewer) {
+    subscribers.push_back(&viewer);
 }
 
 std::ostream &operator<<(std::ostream &os, const Channel &channel) {
-    os << "Channel: " << channel.chanelTitle << " with " << channel.subscriberCount << " subscribers\n";
-//    for (auto &videoclip : channel.videoclips) {
-//        os << videoclip << std::endl;
-//    }
+    os << "Channel: \"" << channel.chanelTitle << "\" with " << channel.subscriberCount << " subscribers\n";
+    if(!channel.videoclips.empty())
+        os << "Videoclips:\n";
+    for (auto &videoclip : channel.videoclips) {
+        os << * videoclip << '\n';
+    }
     return os;
 }

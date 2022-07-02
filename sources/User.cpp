@@ -18,6 +18,25 @@ User::User(const std::string &username_, const std::string &password_, const std
 
 User::User(){}
 
+User::User(const User & obj) : login{obj.login}, email{obj.email}, firstName{obj.firstName}, lastName{obj.lastName},
+                               phoneNumber{obj.phoneNumber} {
+    std::cout << "User copy cstr!\n";
+}
+
+User & User::operator=(const User & obj) {
+    login = obj.login;
+    email = obj.email;
+    firstName = obj.firstName;
+    lastName = obj.lastName;
+    phoneNumber = obj.phoneNumber;
+    std::cout << "User operator =!\n";
+    return *this;
+}
+
+User::~User() {
+    std::cout << "User dstr!\n";
+}
+
 void User::changeEmail(const std::string &email_) {
     email = email_;
 }

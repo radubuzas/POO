@@ -18,12 +18,9 @@ private:
     SubscriptionType subscription;
 public:
     Subscription();
-    Subscription(const Subscription & rff);
-    Subscription& operator=(const Subscription & rff);
-    SubscriptionType getSubscriptionType();
+    Subscription(const SubscriptionType & subscription_);
     void setSubscriptionType(const SubscriptionType & subscription);
     friend std::ostream &operator << (std::ostream &os, const Subscription &subscription);
 
-    ~Subscription();
 };
 #endif //OOP_SUBSCRIPTION_H

@@ -11,12 +11,16 @@ Viewer::Viewer(const User & user_) : user{user_} {
 
 Viewer::Viewer() {}
 
+void Viewer::setSubscriptionType(const SubscriptionType & subscriptionType_) {
+    subscriptionType.setSubscriptionType(subscriptionType_);
+}
+
 //void Viewer::subscribeToChannel(const Channel & channel) {
 ////    subscribedChannels.push_back(channel);                      // add address of channel to vector
 //}
 
 std::ostream &operator<<(std::ostream &os, const Viewer &viewer) {
     os << viewer.user;
-    os << "Subscription Type: " << viewer.subscriptionType << '\n';
+    os << viewer.subscriptionType << '\n';
     return os;
 }

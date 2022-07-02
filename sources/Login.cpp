@@ -15,8 +15,12 @@ bool Login::verify(const std::string &username_, const std::string & password_){
 }
 
 void Login::changePassword(const std::string & oldPassword_, const std::string & newPassword_){
-    if (verify(username, oldPassword_))
+    if (verify(username, oldPassword_)) {
         password = newPassword_;
+        std::cout << "Password for " << username << " changed!\n";
+    }
+    else
+        std::cout << "Old password for " << username<< " is wrong! Can not change password!\n";
 }
 
 std::ostream & operator<<(std::ostream & os, const Login & obj){

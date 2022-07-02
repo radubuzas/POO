@@ -18,6 +18,7 @@ public:
     Viewer( const User & user, const Subscription & subscriptionType);
     Viewer( const User & user);
     Viewer();
+    void setSubscriptionType(const SubscriptionType & subscriptionType_);
     friend std::ostream &operator << (std::ostream &os, const Viewer &viewer);
 };
 
