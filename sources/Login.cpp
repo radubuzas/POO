@@ -3,7 +3,6 @@
 //
 
 #include "../headers/Login.h"
-#include <iostream>
 
 Login::Login(const std::string & username_, const  std::string & password_) : username{username_}, password{password_}{
     std::cout << "Login cstr init\n";

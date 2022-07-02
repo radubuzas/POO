@@ -1,7 +1,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "headers/Login.h"
+#include "headers/Viewer.h"
+#include "headers/Channel.h"
+#include "headers/Videoclip.h"
 
 int main() {
 
@@ -13,5 +15,12 @@ int main() {
     }
     l.changePassword("1234", "12345");
     std :: cout << l;
+
+    std::vector<Videoclip> vids;
+    std::vector<Viewer> subs;
+    std::vector<Channel> channels;
+
+
+
     return 0;
 }
