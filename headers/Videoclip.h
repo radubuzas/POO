@@ -15,7 +15,7 @@ private:
     unsigned const duration;            // seconds
     unsigned int  viewCount;            // I am not a Google engineer, I would use int if I were one.
 public:
-    Videoclip(const std::string &title_, const std::string &description_, unsigned &duration_);
+    Videoclip(const std::string &title_, const std::string &description_, unsigned const &duration_);
     void addView();
     friend std::ostream &operator<<(std::ostream &os, const Videoclip &videoclip);
 };

@@ -21,7 +21,3 @@ std::ostream &operator<<(std::ostream &os, const Subscription &subscription_) {
     os << "Subscription type: " << (subscription_.subscription == SubscriptionType::Basic ? "Basic" : "Premium") << '\n';
     return os;
 }
-
-Subscription::~Subscription() {
-    std::cout << "Subscription dstr!\n";
-}
