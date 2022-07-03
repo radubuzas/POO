@@ -4,9 +4,9 @@
 
 #include "../headers/Subscription.h"
 
-Subscription::Subscription() {
-    subscription = SubscriptionType::Basic;
-}
+//Subscription::Subscription() {
+//    subscription = SubscriptionType::Basic;
+//}
 
 
 Subscription::Subscription(const SubscriptionType & subscription_) {

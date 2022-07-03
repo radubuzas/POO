@@ -1,6 +1,4 @@
 #include <iostream>
-#include <string>
-#include <vector>
 #include "headers/Viewer.h"
 #include "headers/Channel.h"
 #include "headers/Videoclip.h"
@@ -69,10 +67,10 @@ int main() {
 
     User uu{Login {"hiperion", "ds27*&dsNSdw?2_11jiDw*22200,,3123bq"}, "pink.floyd@pinkfloyd.com", "Pink", "Floyd", "0711111111"};
     User uu1{"CrazyDiamond", "YouTube", "redlobster89@fakemail.hu", "Red", "Lobster", "0736281293"};
+
     std::cout << "\n-----------------------\n\n";
+
     Viewer w{uu, SubscriptionType::Premium}, w1{}, w2{uu1, SubscriptionType::Basic};
-
-
 
     std::cout << w << w1 << w2;
 

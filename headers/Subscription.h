@@ -17,8 +17,8 @@ class Subscription {
 private:
     SubscriptionType subscription;
 public:
-    Subscription();
-    Subscription(const SubscriptionType & subscription_);
+    //Subscription();
+    Subscription(const SubscriptionType & subscription_=SubscriptionType::Basic);
     void setSubscriptionType(const SubscriptionType & subscription);
     friend std::ostream &operator << (std::ostream &os, const Subscription &subscription);
 
