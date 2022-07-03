@@ -25,7 +25,6 @@ public:
     //Login:: verify()
     //Login:: changePassword()
     void changeEmail(const std::string &email_);
-
     friend std::ostream & operator<<(std::ostream & os, const User & obj);
 };
 

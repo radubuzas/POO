@@ -37,6 +37,13 @@ int main() {
 
     std::cout << "\n-----------------------\n\n";
 
+    u.changeEmail("new.email@mail.ro");
+    u1.changeEmail("hahaha@production.ro");
+    std::cout << u << u1;
+
+
+    std::cout << "\n-----------------------\n\n";
+
     Videoclip v{"Capra cu 3 iezi", "Poveste scurta de Ion Creanga", 231};
     Videoclip v1{"Share this video with your friends", "https://www.youtube.com/watch?v=dQw4w9WgXcQ", 212};
     Videoclip v2{"How to make a sandwich", "Today I am going to be showing you how to make a simple sandwich!", 32};
@@ -73,13 +80,16 @@ int main() {
 
     Channel c{u, "Ana are mere", 10};
     Channel c1{u1, "Portretul Anei", 127, {&v1}, {}};
-    Channel c2{{"capra", "varza", "capra.varza@yahoo.com", "Capra", "Varza", "0799345678"}, "Capra, Lupul & Varza", 1080234, {&v,&v2}, {}};
+    Channel c2{{"capra", "varza", "capra.varza@yahoo.com", "Capra", "Varza", "0799345678"}, "Capra, Lupul & Varza", 1080234, {&v}, {}};
 
     std::cout << c << c1 << c2;
 
-    std::vector<Viewer> subs;
-    std::vector<Channel> channels;
+    c.addSubscriber(w);
+    c1.addSubscriber(w1);
+    c2.addVideoClip(v2);
 
+    std::cout << "\n-----------------------\n\n";
+    std::cout << c << c1 << c2;
 
 
 

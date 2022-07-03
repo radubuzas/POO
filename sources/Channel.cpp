@@ -20,8 +20,13 @@ std::ostream &operator<<(std::ostream &os, const Channel &channel) {
     os << "Channel: \"" << channel.chanelTitle << "\" with " << channel.subscriberCount << " subscribers\n";
     if(!channel.videoclips.empty())
         os << "Videoclips:\n";
-    for (auto &videoclip : channel.videoclips) {
+    for (auto const &videoclip : channel.videoclips) {
         os << * videoclip << '\n';
+    }
+    if(!channel.subscribers.empty())
+        os << "Subscribers:\n";
+    for (auto const &subscriber : channel.subscribers) {
+        os << * subscriber << '\n';
     }
     return os;
 }
