@@ -6,7 +6,7 @@
 int main() {
 
     // test login
-    Login l, l1("Ana", "qwerty");
+    Login l, l1("Anaa", "qwerty");
     if (l.verify("user", "1234")) {
         std::cout << "Login successful!\n";
     } else {
