@@ -25,8 +25,8 @@ std::ostream &operator<<(std::ostream &os, const Channel &channel) {
     }
     if(!channel.subscribers.empty())
         os << "Subscribers:\n";
-    for (const auto subscriber : channel.subscribers) {
-        os << * subscriber << '\n';
+    for (int i = 0; i < (int)channel.subscribers.size(); ++i) {
+        os << * channel.subscribers[i] << '\n';
     }
     return os;
 }
