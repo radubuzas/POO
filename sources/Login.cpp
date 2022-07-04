@@ -23,6 +23,10 @@ void Login::changePassword(const std::string & oldPassword_, const std::string &
         std::cout << "Old password for " << username<< " is wrong! Can not change password!\n";
 }
 
+std::string Login::getUsername() const{
+    return username;
+}
+
 std::ostream & operator<<(std::ostream & os, const Login & obj){
     os << "Username: " << obj.username << '\n';
     os << "Password: " << obj.password << '\n';

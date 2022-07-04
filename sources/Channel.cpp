@@ -16,8 +16,20 @@ void Channel::addSubscriber(User & obj) {
     subscribers.push_back(&obj);
 }
 
-void Channel::getSubscribersCount() {
-    std::cout << "Subscribers count: " << subscribers.size() << '\n';
+int Channel::getSubscribersCount() const {
+    return subscribers.size();
+}
+
+std::string Channel::getUsername() const {
+    return User::getUsername();
+}
+
+
+void Channel::afisare(std::ostream & os) const {
+    os << "Channel title: " << chanelTitle << '\n';
+    os << "Channel owner: " << this->getUsername() << '\n';
+    os << "Channel subscribers: " << subscribers.size() << '\n';
+    os << "Channel videos: " << videoclips.size() << '\n';
 }
 
 std::ostream &operator<<(std::ostream &os, const Channel &channel) {

@@ -20,12 +20,16 @@ void Viewer::setSubscriptionType(const SubscriptionType & subscriptionType_) {
 //}
 
 void Viewer::afisare(std::ostream & os) const {
-    User::afisare(os);
+    os << "Viewer: " << this->getUsername() << '\n';
     os << "Subscription type: " << subscriptionType << '\n';
 }
 
-void Viewer::getSubscribersCount() {
-    std::cout << "Subscribers count: " << 0 << '\n';
+int Viewer::getSubscribersCount() const {
+    return 0;
+}
+
+std::string Viewer::getUsername() const {
+    return User::getUsername();
 }
 
 Viewer::Viewer(const std::string &username_, const std::string &password_, const std::string &email_, const std::string &firstName_, const std::string &lastName_, const std::string &phoneNumber_, const Subscription & subscriptionType):

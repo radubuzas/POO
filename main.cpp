@@ -91,7 +91,7 @@ int main() {
 
     std::cout << "\n-----------------------\n\n";
 
-    c.getSubscribersCount();
+    std::cout << c.getSubscribersCount();
 
     return 0;
 }

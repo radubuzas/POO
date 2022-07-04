@@ -21,7 +21,8 @@ public:
     Viewer();
     void setSubscriptionType(const SubscriptionType & subscriptionType_);
     void afisare(std::ostream & os) const override;
-    void virtual getSubscribersCount() override;
+    [[nodiscard]]int getSubscribersCount() const override;
+    [[nodiscard]]std::string getUsername() const override;
     friend std::ostream &operator << (std::ostream &os, const Viewer &viewer);
 };
 

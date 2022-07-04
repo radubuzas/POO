@@ -18,6 +18,7 @@ public:
     explicit Login(const std::string & username_="user", const  std::string & password_="1234");        // Cstr init
     bool verify(const std::string &username_, const std::string & password_);                           // verif date
     void changePassword(const std::string & oldPassword_, const std::string & newPassword_);            // schimbare parola
+    [[nodiscard]]std::string getUsername() const;                                                                              // afisare username
     friend std::ostream & operator<<(std::ostream & os, const Login & obj);                             // afisare date, op <<
 };
 

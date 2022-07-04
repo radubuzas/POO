@@ -9,7 +9,7 @@
 #include <iostream>
 
 class User {
-private:
+protected:
     Login login;
     std::string email;
     std::string firstName;
@@ -23,11 +23,12 @@ public:
     User(const User & obj);
     User & operator=(const User & obj);
     ~User();
-    void virtual getSubscribersCount()=0;
+    [[nodiscard]] virtual int getSubscribersCount() const =0;
+    [[nodiscard]] virtual std::string getUsername() const;
+    virtual void afisare(std::ostream & os) const = 0;
     //Login:: verify()
     //Login:: changePassword()
     void changeEmail(const std::string &email_);
-    virtual void afisare(std::ostream & os) const;
     friend std::ostream & operator<<(std::ostream & os, const User & obj);
 };
 

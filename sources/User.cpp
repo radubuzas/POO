@@ -41,12 +41,8 @@ void User::changeEmail(const std::string &email_) {
     email = email_;
 }
 
-void User::afisare(std::ostream & os) const {
-    os << login;
-    os << "Email: " << email << '\n';
-    os << "First name: " << firstName << '\n';
-    os << "Last name: " << lastName << '\n';
-    os << "Phone number: " << phoneNumber << '\n';
+std::string User::getUsername() const {
+    return login.getUsername();
 }
 
 std::ostream &operator<<(std::ostream &os, const User &user) {
