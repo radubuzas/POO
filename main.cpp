@@ -89,6 +89,9 @@ int main() {
     std::cout << "\n-----------------------\n\n";
     std::cout << c << c1 << c2;
 
+    std::cout << "\n-----------------------\n\n";
+
+    c.getSubscribersCount();
 
     return 0;
 }

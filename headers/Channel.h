@@ -19,7 +19,7 @@ public:
     Channel(const User & user, const std::string & chanelTitle);
     void addVideoClip(Videoclip & videoclip);
     void addSubscriber(User & obj);
-    void virtual getSubscribersCount() override;
+    void getSubscribersCount() override;
     friend std::ostream &operator << (std::ostream &os, const Channel &channel);
     std::string getName() {
         return chanelTitle;
