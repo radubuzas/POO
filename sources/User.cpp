@@ -41,11 +41,15 @@ void User::changeEmail(const std::string &email_) {
     email = email_;
 }
 
+void User::afisare(std::ostream & os) const {
+    os << login;
+    os << "Email: " << email << '\n';
+    os << "First name: " << firstName << '\n';
+    os << "Last name: " << lastName << '\n';
+    os << "Phone number: " << phoneNumber << '\n';
+}
+
 std::ostream &operator<<(std::ostream &os, const User &user) {
-    os << user.login;
-    os << "Email: " << user.email << '\n';
-    os << "First name: " << user.firstName << '\n';
-    os << "Last name: " << user.lastName << '\n';
-    os << "Phone number: " << user.phoneNumber << '\n';
+    user.afisare(os);
     return os;
 }

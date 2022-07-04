@@ -28,8 +28,8 @@ int main() {
 
     std::cout << "\n-----------------------\n\n";
 
-    User u{"anamere", "parola_mea", "ana.mere@gmail.com", "Ana", "Mere", "0712345678"};
-    User u1{l1};
+    Viewer u{"anamere", "parola_mea", "ana.mere@gmail.com", "Ana", "Mere", "0712345678"};
+    Viewer u1{l1};
 
     std::cout << u << u1;
 
@@ -65,8 +65,8 @@ int main() {
 
     std::cout << "\n-----------------------\n\n";
 
-    User uu{Login {"hiperion", "ds27*&dsNSdw?2_11jiDw*22200,,3123bq"}, "pink.floyd@pinkfloyd.com", "Pink", "Floyd", "0711111111"};
-    User uu1{"CrazyDiamond", "YouTube", "redlobster89@fakemail.hu", "Red", "Lobster", "0736281293"};
+    Viewer uu{Login {"hiperion", "ds27*&dsNSdw?2_11jiDw*22200,,3123bq"}, "pink.floyd@pinkfloyd.com", "Pink", "Floyd", "0711111111"};
+    Viewer uu1{"CrazyDiamond", "YouTube", "redlobster89@fakemail.hu", "Red", "Lobster", "0736281293"};
 
     std::cout << "\n-----------------------\n\n";
 
@@ -76,9 +76,9 @@ int main() {
 
     std::cout << "\n-----------------------\n\n";
 
-    Channel c{u, "Ana are mere", 10};
-    Channel c1{u1, "Portretul Anei", 127, {&v1}, {}};
-    Channel c2{{"capra", "varza", "capra.varza@yahoo.com", "Capra", "Varza", "0799345678"}, "Capra, Lupul & Varza", 1080234, {&v}, {}};
+    Channel c{u, "Ana are mere"};
+    Channel c1{u1, "Portretul Anei", {&v1}, {}};
+    Channel c2{ Viewer{"capra", "varza", "capra.varza@yahoo.com", "Capra", "Varza", "0799345678"}, "Capra, Lupul & Varza", {&v}, {}};
 
     std::cout << c << c1 << c2;
 
@@ -88,8 +88,6 @@ int main() {
 
     std::cout << "\n-----------------------\n\n";
     std::cout << c << c1 << c2;
-
-
 
 
     return 0;

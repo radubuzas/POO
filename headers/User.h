@@ -15,6 +15,7 @@ private:
     std::string firstName;
     std::string lastName;
     std::string phoneNumber;
+
 public:
     User(const std::string &username_, const std::string &password_, const std::string &email_, const std::string &firstName_, const std::string &lastName_, const std::string &phoneNumber_);
     explicit User(const Login & obj, const std::string &email_="", const std::string &firstName_="", const std::string &lastName_="", const std::string &phoneNumber_="");
@@ -22,9 +23,11 @@ public:
     User(const User & obj);
     User & operator=(const User & obj);
     ~User();
+    void virtual getSubscribersCount()=0;
     //Login:: verify()
     //Login:: changePassword()
     void changeEmail(const std::string &email_);
+    virtual void afisare(std::ostream & os) const;
     friend std::ostream & operator<<(std::ostream & os, const User & obj);
 };
 

@@ -9,18 +9,17 @@
 #include "Viewer.h"
 #include "Videoclip.h"
 
-class Channel {
+class Channel : public User {
 private:
-    User user;
     std::string chanelTitle;
-    unsigned subscriberCount;
     std::vector <Videoclip *> videoclips;               // lista de videoclipuri incarcate
-    std::vector <Viewer *> subscribers;                 // lista abonantilor canalului
+    std::vector <User *> subscribers;                 // lista abonantilor canalului
 public:
-    Channel(const User & user, const std::string & chanelTitle, unsigned subscriberCount, const std::vector<Videoclip *> & videoclips, const std::vector<Viewer *> & subs_);
-    Channel(const User & user, const std::string & chanelTitle, unsigned subscriberCount);
+    Channel(const User & user, const std::string & chanelTitle, const std::vector<Videoclip *> & videoclips, const std::vector<User *> & subs_);
+    Channel(const User & user, const std::string & chanelTitle);
     void addVideoClip(Videoclip & videoclip);
-    void addSubscriber(Viewer & viewer);
+    void addSubscriber(User & obj);
+    void virtual getSubscribersCount() override;
     friend std::ostream &operator << (std::ostream &os, const Channel &channel);
     std::string getName() {
         return chanelTitle;
