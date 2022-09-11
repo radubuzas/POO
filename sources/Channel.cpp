@@ -4,11 +4,15 @@
 
 #include "../headers/Channel.h"
 
+Videoclip * Channel::pointerToLastVideocip = nullptr;
+
 Channel::Channel(const User & user_, const std::string & title_): User{user_}, chanelTitle{title_}{}
 
 Channel::Channel(const User & user_, const std::string & title_, const std::vector<Videoclip *> & vid, const std::vector<User *> & subs_): User{user_}, chanelTitle{title_}, videoclips{vid}, subscribers{subs_}{}
 
 void Channel::addVideoClip(Videoclip & videoclip) {
+    delete pointerToLastVideocip;
+    pointerToLastVideocip = & videoclip;
     videoclips.push_back( & videoclip);
 }
 
@@ -30,6 +34,10 @@ void Channel::afisare(std::ostream & os) const {
     os << "Channel owner: " << this->getUsername() << '\n';
     os << "Channel subscribers: " << subscribers.size() << '\n';
     os << "Channel videos: " << videoclips.size() << '\n';
+}
+
+void Channel::lastVideoclipUploaded() {
+    std::cout << *pointerToLastVideocip;
 }
 
 std::ostream &operator<<(std::ostream &os, const Channel &channel) {

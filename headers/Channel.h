@@ -11,6 +11,7 @@
 
 class Channel : public User {
 private:
+    static Videoclip * pointerToLastVideocip;
     std::string chanelTitle;
     std::vector <Videoclip *> videoclips;               // lista de videoclipuri incarcate
     std::vector <User *> subscribers;                 // lista abonantilor canalului
@@ -26,6 +27,7 @@ public:
     std::string getName() {
         return chanelTitle;
     }
+    static void lastVideoclipUploaded();
 };
 
 #endif //OOP_CHANNEL_H

@@ -86,12 +86,20 @@ int main() {
     c1.addSubscriber(w1);
     c2.addVideoClip(v2);
 
+    std::cout <<
     std::cout << "\n-----------------------\n\n";
     std::cout << c << c1 << c2;
 
     std::cout << "\n-----------------------\n\n";
 
     std::cout << c.getSubscribersCount();
+
+    std::cout << "\nTotal number of users: " << User::getTotalUsers();
+
+    std::cout << "\n-----------------------\n\n";
+
+    std::cout << "Last videoclip uploaded was:\n";
+    Channel::lastVideoclipUploaded();
 
     return 0;
 }

@@ -10,6 +10,7 @@
 
 class User {
 protected:
+    static unsigned user_count;
     Login login;
     std::string email;
     std::string firstName;
@@ -28,6 +29,7 @@ public:
     virtual void afisare(std::ostream & os) const = 0;
     //Login:: verify()
     //Login:: changePassword()
+    static unsigned getTotalUsers();
     void changeEmail(const std::string &email_);
     friend std::ostream & operator<<(std::ostream & os, const User & obj);
 };
