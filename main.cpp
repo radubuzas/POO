@@ -103,12 +103,12 @@ int main() {
     std::cout << "Last videoclip uploaded was:\n";
     Channel::lastVideoclipUploaded();
 
-    Viewer *p = new Viewer();
-    try {std::cout << *(dynamic_cast<User*>(p));}
-    catch (CustomException& err){
-        std::cout << err.what();
-    }
-    delete p;
+//    Viewer *p = new Viewer();
+//    try {std::cout << *(dynamic_cast<User*>(p));}
+//    catch (CustomException& err){
+//        std::cout << err.what();
+//    }
+//    delete p;
 
     return 0;
 }
