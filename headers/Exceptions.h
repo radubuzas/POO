@@ -1,0 +1,36 @@
+//
+// Created by Radu Buzas on 11.09.2022.
+//
+
+#ifndef OOP_EXCEPTIONS_H
+#define OOP_EXCEPTIONS_H
+
+#include <exception>
+#include <string>
+
+class CustomException : public std::exception {
+
+private:
+    std::string exceptionMessage;
+
+public:
+    explicit CustomException(std::string  = "Something went wrong.");
+    [[nodiscard]] const char * what() const noexcept override;
+
+};
+
+class FailedTextureLoad : public CustomException {
+
+public:
+    FailedTextureLoad();
+    explicit FailedTextureLoad(const std::string&);
+};
+
+class BadID : public CustomException {
+
+public:
+    BadID();
+    explicit BadID(const std::string &);
+};
+
+#endif //OOP_EXCEPTIONS_H
