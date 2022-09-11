@@ -77,8 +77,10 @@ int main() {
     std::cout << "\n-----------------------\n\n";
 
     Channel c{u, "Ana are mere"};
-    Channel c1{u1, "Portretul Anei", {&v1}, {}};
-    Channel c2{ Viewer{"capra", "varza", "capra.varza@yahoo.com", "Capra", "Varza", "0799345678"}, "Capra, Lupul & Varza", {&v}, {}};
+    std::shared_ptr<Videoclip> temp0(new Videoclip(v1));
+    std::shared_ptr<Videoclip> temp1(new Videoclip(v));
+    Channel c1{u1, "Portretul Anei", {temp0}, {}};
+    Channel c2{ Viewer{"capra", "varza", "capra.varza@yahoo.com", "Capra", "Varza", "0799345678"}, "Capra, Lupul & Varza", {temp1}, {}};
 
     std::cout << c << c1 << c2;
 

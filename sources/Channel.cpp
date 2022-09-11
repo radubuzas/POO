@@ -8,12 +8,13 @@ Videoclip * Channel::pointerToLastVideocip = nullptr;
 
 Channel::Channel(const User & user_, const std::string & title_): User{user_}, chanelTitle{title_}{}
 
-Channel::Channel(const User & user_, const std::string & title_, const std::vector<Videoclip *> & vid, const std::vector<User *> & subs_): User{user_}, chanelTitle{title_}, videoclips{vid}, subscribers{subs_}{}
+Channel::Channel(const User & user_, const std::string & title_, const std::vector<std::shared_ptr<Videoclip>> & vid, const std::vector<User *> & subs_): User{user_}, chanelTitle{title_}, videoclips{vid}, subscribers{subs_}{}
 
 void Channel::addVideoClip(Videoclip & videoclip) {
     delete pointerToLastVideocip;
     pointerToLastVideocip = & videoclip;
-    videoclips.push_back( & videoclip);
+    std::shared_ptr<Videoclip> temp(new Videoclip(videoclip));
+    videoclips.push_back( temp);
 }
 
 void Channel::addSubscriber(User & obj) {

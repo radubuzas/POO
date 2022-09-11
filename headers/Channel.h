@@ -5,6 +5,7 @@
 #ifndef OOP_CHANNEL_H
 #define OOP_CHANNEL_H
 
+#include <memory>
 #include "User.h"
 #include "Viewer.h"
 #include "Videoclip.h"
@@ -13,10 +14,10 @@ class Channel : public User {
 private:
     static Videoclip * pointerToLastVideocip;
     std::string chanelTitle;
-    std::vector <Videoclip *> videoclips;               // lista de videoclipuri incarcate
+    std::vector <std::shared_ptr<Videoclip>> videoclips;               // lista de videoclipuri incarcate
     std::vector <User *> subscribers;                 // lista abonantilor canalului
 public:
-    Channel(const User & user, const std::string & chanelTitle, const std::vector<Videoclip *> & videoclips, const std::vector<User *> & subs_);
+    Channel(const User & user, const std::string & chanelTitle, const std::vector<std::shared_ptr<Videoclip>> & videoclips, const std::vector<User *> & subs_);
     Channel(const User & user, const std::string & chanelTitle);
     void addVideoClip(Videoclip & videoclip);
     void addSubscriber(User & obj);

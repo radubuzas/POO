@@ -14,7 +14,7 @@ private:
     std::string exceptionMessage;
 
 public:
-    explicit CustomException(std::string  = "Something went wrong.");
+    [[maybe_unused]]explicit CustomException(std::string  = "Something went wrong.");
     [[nodiscard]] const char * what() const noexcept override;
 
 };
@@ -23,14 +23,14 @@ class FailedTextureLoad : public CustomException {
 
 public:
     FailedTextureLoad();
-    explicit FailedTextureLoad(const std::string&);
+    [[maybe_unused]]explicit FailedTextureLoad(const std::string&);
 };
 
 class BadID : public CustomException {
 
 public:
     BadID();
-    explicit BadID(const std::string &);
+    [[maybe_unused]]explicit BadID(const std::string &);
 };
 
 #endif //OOP_EXCEPTIONS_H
