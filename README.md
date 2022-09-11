@@ -27,11 +27,11 @@
 - [ ] moșteniri
   - [ ] funcții virtuale (pure), constructori virtuali (clone)
   - [ ] apelarea constructorului din clasa de bază 
-  - [ ] smart pointers
+  - [x] smart pointers
   - [ ] `dynamic_cast`
 - [x] suprascris cc/op= pentru copieri/atribuiri corecte, copy and swap
 - [ ] excepții
-  - [ ] ierarhie proprie (cu baza `std::exception` sau derivată din `std::exception`)
+  - [x] ierarhie proprie (cu baza `std::exception` sau derivată din `std::exception`)
   - [ ] utilizare cu sens: de exemplu, `throw` în constructor, `try`/`catch` în `main`
 - [x] funcții și atribute `static`
 - [x] STL

@@ -4,15 +4,8 @@
 
 #include "../headers/Login.h"
 
-unsigned int Login::userCount = 0;
-
 Login::Login(const std::string & username_, const  std::string & password_) : username{username_}, password{password_}{
     std::cout << "Login cstr init\n";
-    ++userCount;
-}
-
-unsigned int Login::getUserCount() {
-    return userCount;
 }
 
 bool Login::verify(const std::string &username_, const std::string & password_){
