@@ -15,7 +15,7 @@ private:
 
 public:
     [[maybe_unused]]explicit CustomException(std::string  = "Something went wrong.");
-    [[nodiscard]] const char * what() const noexcept override;
+    [[maybe_unused]][[nodiscard]] const char * what() const noexcept override;
 
 };
 
