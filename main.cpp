@@ -86,7 +86,6 @@ int main() {
     c1.addSubscriber(w1);
     c2.addVideoClip(v2);
 
-    std::cout <<
     std::cout << "\n-----------------------\n\n";
     std::cout << c << c1 << c2;
 
