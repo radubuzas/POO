@@ -102,6 +102,8 @@ int main() {
     std::cout << "Last videoclip uploaded was:\n";
     Channel::lastVideoclipUploaded();
 
+    Viewer *p = new Viewer();
+    std::cout << *(dynamic_cast<User*>(p));
 
     return 0;
 }

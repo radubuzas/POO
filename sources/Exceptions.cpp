@@ -7,9 +7,6 @@
 
 CustomException::CustomException(std::string exceptionMessage) : exceptionMessage(std::move(exceptionMessage)) {}
 
-const char *CustomException::what() const noexcept {
-    return exceptionMessage.c_str();
-}
 
 // FailedTextureLoad
 FailedTextureLoad::FailedTextureLoad() :

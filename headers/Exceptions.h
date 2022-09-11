@@ -15,8 +15,6 @@ private:
 
 public:
     [[maybe_unused]]explicit CustomException(std::string  = "Something went wrong.");
-    [[maybe_unused]][[nodiscard]] const char * what() const noexcept override;
-
 };
 
 class FailedTextureLoad : public CustomException {
