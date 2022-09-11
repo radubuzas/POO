@@ -11,6 +11,8 @@ Viewer::Viewer(const User & user_): User{user_} {}
 
 Viewer::Viewer() {}
 
+Viewer::~Viewer() {}
+
 void Viewer::setSubscriptionType(const SubscriptionType & subscriptionType_) {
     subscriptionType.setSubscriptionType(subscriptionType_);
 }

@@ -2,6 +2,7 @@
 #include "headers/Viewer.h"
 #include "headers/Channel.h"
 #include "headers/Videoclip.h"
+#include "headers/Exceptions.h"
 
 int main() {
 
@@ -103,7 +104,11 @@ int main() {
     Channel::lastVideoclipUploaded();
 
     Viewer *p = new Viewer();
-    std::cout << *(dynamic_cast<User*>(p));
+    try {std::cout << *(dynamic_cast<User*>(p));}
+    catch (CustomException& err){
+        std::cout << err.what();
+    }
+    delete p;
 
     return 0;
 }
