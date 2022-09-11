@@ -17,7 +17,7 @@ void Channel::addSubscriber(User & obj) {
 }
 
 int Channel::getSubscribersCount() const {
-    return subscribers.size();
+    return (int)subscribers.size();
 }
 
 std::string Channel::getUsername() const {

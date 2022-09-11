@@ -16,7 +16,7 @@ private:
 public:
     Viewer( const User & user, const Subscription & subscriptionType);
     Viewer(const std::string &username_, const std::string &password_, const std::string &email_, const std::string &firstName_, const std::string &lastName_, const std::string &phoneNumber_, const Subscription &subscription =SubscriptionType::Basic);
-    Viewer(const Login & obj, const std::string &email_="", const std::string &firstName_="", const std::string &lastName_="", const std::string &phoneNumber_="");
+    explicit Viewer(const Login & obj, const std::string &email_="", const std::string &firstName_="", const std::string &lastName_="", const std::string &phoneNumber_="");
     explicit Viewer( const User & user);
     Viewer();
     void setSubscriptionType(const SubscriptionType & subscriptionType_);
